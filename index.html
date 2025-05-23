@@ -176,21 +176,19 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            // Add a small delay for each card to create a cascading effect
             setTimeout(() => {
               entry.target.classList.add('fade-in');
-            }, index * 100); // Stagger effect of 100ms per card
+            }, index * 100); 
             
             // Once the animation is applied, we can stop observing this card
             observer.unobserve(entry.target);
           }
         });
       }, {
-        rootMargin: '-50px', // Trigger when element is 50px from viewport
-        threshold: 0.15 // Trigger when 15% of the element is visible
+        rootMargin: '-50px',
+        threshold: 0.15
       });
       
-      // Observe all feature cards
       featureCards.forEach(card => {
         observer.observe(card);
       });
@@ -199,13 +197,11 @@
     // Theme toggler functionality
     const themeToggle = document.getElementById('theme-toggle');
     
-    // Check for saved theme in localStorage
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       themeToggle.checked = true;
     }
     
-    // Add toggle event listener
     themeToggle.addEventListener('change', function() {
       if (this.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
