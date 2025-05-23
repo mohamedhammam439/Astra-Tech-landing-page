@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description">
+  <title>TechFlow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>TechFlow</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="theme-slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+          </span>
+        </label>
+        <button class="cta-button nav-cta">Get Started</button>
+        <div class="mobile-menu">
+          <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Streamline Your Workflow</h1>
+        <p>Experience the power of seamless integration and intelligent automation.</p>
+        <div class="hero-buttons">
+          <button class="cta-button primary">Get Started</button>
+          <button class="cta-button secondary">Learn More</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/600x400" alt="Product Dashboard">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">✨ Features</div>
+        <h2>Everything you need to <span class="highlight">succeed</span></h2>
+        <p>Powerful features designed to streamline your workflow and accelerate your business growth.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon lightning">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Experience blazing-fast performance with our optimized infrastructure and cutting-edge technology.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon shield">🛡️</div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-level security with end-to-end encryption, ensuring your data is always protected.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon chart">📊</div>
+          <h3>Advanced Analytics</h3>
+          <p>Get deep insights with AI-powered analytics and real-time reporting dashboards.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon people">👥</div>
+          <h3>Team Collaboration</h3>
+          <p>Seamlessly collaborate with your team using our intuitive collaboration tools.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon clock">🕒</div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock support from our expert team to help you succeed.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon ai">✨</div>
+          <h3>AI-Powered</h3>
+          <p>Leverage artificial intelligence to automate workflows and boost productivity.</p>
+        </div>
+      </div>
+      
+      <div class="cta-center">
+        <button class="cta-button primary">Explore All Features</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>TechFlow</h3>
+          <p>Empowering businesses with next-generation technology solutions.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+            <li><a href="#updates">Updates</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#docs">Documentation</a></li>
+            <li><a href="#help">Help Center</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#api">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechFlow. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Simple mobile menu toggle
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+      this.classList.toggle('active');
+    });
+    
+    // Scroll animation for feature cards
+    function handleScrollAnimation() {
+      const featureCards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Add a small delay for each card to create a cascading effect
+            setTimeout(() => {
+              entry.target.classList.add('fade-in');
+            }, index * 100); // Stagger effect of 100ms per card
+            
+            // Once the animation is applied, we can stop observing this card
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '-50px', // Trigger when element is 50px from viewport
+        threshold: 0.15 // Trigger when 15% of the element is visible
+      });
+      
+      // Observe all feature cards
+      featureCards.forEach(card => {
+        observer.observe(card);
+      });
+    }
+    
+    // Theme toggler functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme in localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.checked = true;
+    }
+    
+    // Add toggle event listener
+    themeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+    // Run animation handler when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      handleScrollAnimation();
+    });
+  </script>
+</body>
+</html>
